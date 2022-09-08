@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Fencing</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+        <link rel="stylesheet" href="css/regionApp.css" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <link rel="shortcut icon" sizes="196x196" href="images/icon.png" />
+        <link rel="apple-touch-icon-precomposed" href="images/icon.png" />
+    </head>
+    
+    <body>
+        <style>
+            body {
+                background-image: url('images/world_map.png');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;    
+            }
+
+
+        </style>
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="mdl-layout__header">
+                
+                <button onclick="location.href = 'index.html';" class="mdl-layout-icon mdl-button mdl-js-button mdl-button--icon"> 
+                    <i class="material-icons">arrow_back</i>
+                </button>
+                <div class="mdl-layout__header-row">
+                    <span class="mdl-layout-title" id="headerBarTitle">View Region</span>
+                     <!-- Added a new toggle switch to display the fence as in the wireframes -->
+                     
+                    <label id="toggle1" class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
+                        <input type="checkbox" id="switch-2" class="mdl-switch__input">
+                        <span class="mdl-switch__label"></span>
+                    </label>
+                    <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" id="settings" onclick="displaySettings()">
+                        <i class="material-icons">settings</i>
+                    </button>
+                </div>   
+                                 
+            
+            </header>
+
+            <main class="mdl-layout__content">
+                <!--   Main page content here:   -->  
+                <div>
+                    <!-- Layout added by Sithum starts here-->
+                    <div id="buttonGrid1" class="mdl-grid">
+                        <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
+                            <!-- Remove Region -->
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="removeReg" onclick="removeRegion()">
+                                Remove Region</button>
+                        </div>
+                        <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
+                            <!-- Calculate Area -->
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="calArea" onclick="calculateArea()" >
+                                Calculate Area</button>
+                        </div>
+                        <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
+                            <!-- Calculate Perimeter -->
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="calPerimeter" onclick="calculatePerimeter()">
+                                Calculate Perimeter</button>
+                        </div>
+                    </div>
+                    <!-- Layout added by Sithum ends here-->
+                </div>
+            </main>
+            
+            <div id="toast" class="mdl-js-snackbar mdl-snackbar">
+                <div class="mdl-snackbar__text"></div>
+                <button class="mdl-snackbar__action" type="button"></button>
+            </div>
+            <footer class="mdl-mini-footer">
+                <div class="mdl-mini-footer__left-section">
+                    <div class="mdl-logo">Fencing</div>
+                    <ul class="mdl-mini-footer__link-list">
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Company Information </a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+        
+        <!--   JavaScript files:   -->
+        <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+		<script src="js/shared.js"></script>
+        <script src="js/utility.js"></script>
+        <script src="js/viewRegionPage.js"></script>
+    </body>
+</html>

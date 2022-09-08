@@ -1,0 +1,25 @@
+body {
+  background: black;
+  padding: 20px;
+  font-family: Verdana;
+}
+
+#app {
+  background: gold;
+  border-radius: 4px;
+  padding: 20px;
+  transition: all 0.2s;
+}
+
+li {
+  margin: 8px 0;
+}
+
+h2 {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+del {
+  color: purple;
+}

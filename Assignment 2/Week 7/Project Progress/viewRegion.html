@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Surveying App: View Region</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+        <link rel="stylesheet" href="css/regionApp.css" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <link rel="shortcut icon" sizes="196x196" href="images/icon.png" />
+        <link rel="apple-touch-icon-precomposed" href="images/icon.png" />
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+        <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+
+        <script type="text/javascript"src="https://geographiclib.sourceforge.io/scripts/geographiclib.min.js"></script>
+        <style>
+            body { margin: 0; padding: 0; }
+            #map { position: absolute; top: 0px; bottom: 0; height: 100%; }
+        </style>
+
+
+    </head>
+    
+    <body>
+        <!-- Start MDL header, 
+            contains the name of webpage and an add button that redirects the user to the record region page-->
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="mdl-layout__header">
+                
+                <button onclick="location.href = 'index.html';" class="mdl-layout-icon mdl-button mdl-js-button mdl-button--icon"> 
+                    <i class="material-icons">arrow_back</i>
+                </button>
+                <div class="mdl-layout__header-row">
+                    <span class="mdl-layout-title" id="headerBarTitle"></span>
+                     <!-- Toggle switch -->
+                    <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="toggleSwitch">
+                        <input type="checkbox" id="toggleSwitch" onclick="estimatefencing(this)" class="mdl-switch__input">
+                        <span class="mdl-switch__label "></span>
+                        <div class="mdl-tooltip" data-mdl-for="toggleSwitch">click to view fence</div>
+                    </label>
+                </div>   
+            </header>
+
+        <main class="mdl-layout__content">
+            <!--   Main page content here:   -->  
+            <div id ="map"></div>
+            <pre id="area"></pre>
+            <pre id="perimeter"></pre>
+            <pre id="postDistance"></pre>
+            <pre id="total"></pre>
+            <!--Display the number of fence posts here-->
+                <div id="buttonGrid1" class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
+                        <!-- Remove region -->
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="removeReg" onclick="removeRegion()">
+                            Remove Region</button>
+                    </div>
+                    <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
+                        <!-- Calculate Area -->
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="calArea" onclick="calculateArea()" >
+                            Calculate Area</button>
+                    </div>
+                    <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
+                        <!-- Calculate Perimeter -->
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="calPerimeter" onclick="calculatePerimeter()">
+                            Calculate Perimeter</button>
+                    </div>
+                    <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
+                        <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" id="settingsButton" onclick="goToSettingsPage()"  >
+                            <span class="material-icons">settings</span>      
+                            <div class="mdl-tooltip" data-mdl-for="settingsButton">Go to settings page</div>        
+                        </button>
+                    </div>
+                </div>
+        </main>
+
+            <!-- Footer 
+                This would contain the websites technical and legal information , website navigation and security details
+                It has a website navigation to the setting page
+                The website logo, copyright notices could be added -->
+            <footer class="mdl-mini-footer">
+                <div class="mdl-mini-footer__left-section">
+                    <div class="mdl-logo">Surveying App</div>
+                    <ul class="mdl-mini-footer__link-list">
+                        <li><a href="settings.html">Settings</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+        
+        <!--   JavaScript files:   -->
+        <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+		<script src="js/shared.js"></script>
+        <script src="js/utility.js"></script>
+        <script src="js/viewRegionPage.js"></script>
+        <script src="https://npmcdn.com/@turf/turf@5.1.6/turf.min.js"></script>
+    </body>
+</html>

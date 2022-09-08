@@ -1,0 +1,146 @@
+html, body { 
+    height: 100%; 
+    margin: 0; 
+    padding: 0; 
+}
+
+#map {
+    width: 100%;
+    /* view height, minus header bar height and room for buttons */
+    height: calc(100vh - 124px);
+}
+
+.noSavedRegions {
+    font-size: 18px;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+}
+/* CSS for record region page given below*/
+#info {
+    display: block; 
+    position: absolute;
+    margin: 0px auto;
+    bottom: 100px;
+    left:10px;
+    width: 9em;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: left;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+}
+.coordinates {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 11px;
+    line-height: 18px;
+    border-radius: 3px;
+    display: none;
+}
+.distance-container {
+    position: absolute;
+    bottom: 170px;
+    left: 10px;
+    z-index: 1;
+}
+
+.distance-container > * {
+    background-color: rgba(15, 48, 235, 0.8);
+    color: #fff;
+    font-size: 11px;
+    line-height: 18px;
+    display: block;
+    margin: 0;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+.buttonGrid1{
+    background-color: #fff;
+}
+
+/*Css for view region page given below*/
+#area {
+    display: block; 
+    position: absolute;
+    margin: 0px auto;
+    bottom: 100px;
+    left:10px;
+    width: 15em;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: left;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+}
+#perimeter{
+    display: block; 
+    position: absolute;
+    margin: 0px auto;
+    bottom: 40px;
+    left:10px;
+    width: 15em;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: left;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+}
+#total{
+    display: block; 
+    position: absolute;
+    margin: 0px auto;
+    bottom: 160px;
+    left:10px;
+    width: 15em;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: left;
+    color: #fff;
+    background: rgba(9, 5, 216, 0.8);
+}
+#postDistance{
+    display: block; 
+    position: absolute;
+    margin: 0px auto;
+    bottom: 210px;
+    left:10px;
+    width: 15em;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    text-align: left;
+    color: #fff;
+    background: rgba(9, 5, 216, 0.8);
+}
+
+/* Css for index page given below*/
+#grid_1 {
+    background-color: rgb(53, 131, 209);
+}
+#removeAllReg
+{
+    line-height: 1px;
+    width: 15em;
+    font-size: 12pt;
+    font-family: tahoma;
+    margin-top: 1px;
+    margin-right: 1px;
+    position:absolute;
+    bottom:10px;
+    right:5em;
+}

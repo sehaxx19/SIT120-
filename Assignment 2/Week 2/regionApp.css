@@ -1,0 +1,18 @@
+html, body { 
+    height: 100%; 
+    margin: 0; 
+    padding: 0; 
+}
+
+#map {
+    width: 100%;
+    /* view height, minus header bar height and room for buttons */
+    height: calc(100vh - 124px);
+}
+
+.noSavedRegions {
+    font-size: 18px;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+}

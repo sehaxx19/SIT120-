@@ -1,0 +1,16 @@
+new Vue({
+  el: "#app",
+  data: {
+    todos: [
+      { text: "Introduction to JavaScript", done: false },
+      { text: "Introduction to Vue.js Framework", done: false },
+      { text: "Test your Javascript with JSFiddle", done: true },
+      { text: "Create and publish responsive web page app", done: true }
+    ]
+  },
+  methods: {
+  	toggle: function(todo){
+    	todo.done = !todo.done
+    }
+  }
+})

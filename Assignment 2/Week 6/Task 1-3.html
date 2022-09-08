@@ -1,0 +1,92 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+</head>
+<body>
+  <div class="center">
+    <h1>Login Here</h1>
+    <form action="" method="post">
+        <table>
+          <tr>
+            <td>Email:</td>
+            <td><input type="text" name="user" placeholder="Enter Email Here"></td>
+          </tr>
+          <tr>
+            <td>Password:</td>
+            <td><input type="password" name="user_pass" placeholder="Enter Password Here"></td>
+          </tr>
+          
+          <tr>
+            <center>
+            <td><input type="submit" name="submit" value="Login"></td>
+            </center>
+             
+          </tr>
+          <td>
+            <div class ="pass"> Human Verification? <input type="checkbox" id="checkbox" v-model="checked">
+              <label for="checkbox"></label>
+          </td>
+          
+            <td><div>
+              <select v-model="selected">
+                <option disabled value=""> Please select one</option>
+                <option>None </option>
+                <option>Male </option>
+                <option>Female</option>
+                <option>Other</option>
+              </select>
+              
+              </td>
+              <script>
+              new Vue({
+              el: '...',
+              data: {
+              selected: ''
+              }
+              })
+            </script>
+  
+            </div>
+
+          </div>
+        </table>  
+    </form>
+
+  </div>
+ 
+<style>
+    body 
+    {
+        margin: 0;
+        padding: 0;
+        background-color: rgb(72, 150, 152);
+        height: 100vh;
+        overflow: hidden;
+ 
+    }
+    .center
+    {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 400px;
+        background: rgb(152, 138, 69);
+        border-radius: 10px;
+    }
+    .center h1
+    {
+        text-align: center;
+    }
+    .center form
+    {
+        
+    }
+</style>
+</body>
+
+    
+</html>

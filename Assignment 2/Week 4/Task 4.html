@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+    <title>Week 4 Practical Tasks</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</html>
+<div id="app"> <div>
+    <h1 v-if="seen=='1'"> Task 4</h1>
+    <h1 v-else-if="seen=='2'"> Introduction to Vue</h1> 
+    </div>
+    <div>
+    <button v-on:click="dataToggle= !dataToggle">Show/Hide</button>
+    <div v-show="dataToggle">
+    <h3>Welcome to Responsive Web App</h3>
+    <h5>Here you will get to learn how to create web pages using Vue.js framework</h5> </div>
+    </div>
+    
+    
+<script>
+      new Vue({ el: '#app', data:{
+    seen:'1', dataToggle: true, }
+    })
+</script>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Surveying App: Fencing</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+        <link rel="stylesheet" href="css/regionApp.css" />
+        <link rel="shortcut icon" sizes="196x196" href="images/icon.png" />
+        <link rel="apple-touch-icon-precomposed" href="images/icon.png" />
+        <script type="text/javascript" src="https://geographiclib.sourceforge.io/scripts/geographiclib.min.js" > </script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/vuex"></script>
+    </head>
+    
+    <body>
+        <style>
+            body {
+                background-image: url('images/world_map.png');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+        </style>
+        <!-- Start MDL header, 
+            contains the name of webpage and an add button that redirects the user to the record region page-->
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row">
+                    <span class="mdl-layout-title" id="headerBarTitle">Regions</span>
+                    <div class="mdl-layout-spacer"></div>
+                    <button onclick="location.href = 'recordRegion.html';" class="mdl-button mdl-js-button mdl-button--icon">
+                        <i class="material-icons">add</i>
+                    </button>
+                </div>
+            </header>
+            
+            <!--- MDL Drawer
+                Can be accessed by pressing the hamburger button
+                A drawer is added to quickly access the record region and view region pages 
+            -->
+            <div class="mdl-layout__drawer">
+                <span class="mdl-layout-title">Regions</span>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="recordRegion.html">Record Region</a>
+                    <a class="mdl-navigation__link" href="viewRegion.html">View Regions</a>
+                </nav>
+            </div> 
+            <!-- MDL drawer ends -->
+            <main class="mdl-layout__content" >
+                <!--   Main page content here:   -->  
+
+                <!-- regions list.     
+                This will display all the regions created in the record region page as a list with the date and time it was created.
+                -->  
+                <div class="mdl-grid">
+                    <div id="grid_1" class="mdl-cell mdl-cell--4-col">
+                        <ul class="mdl-list" id="regionsList">
+                            <!-- The List elements are generated dynamically in the main page.js file   -->
+                        </ul>
+                    </div>
+                    <button  class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="removeAllReg" onclick="removeAllRegion()">
+                        Remove All Regions</button>
+                </div>
+                
+                <!--   End regions list.   -->  
+            </main>
+            
+            <!-- Footer 
+                This would contain the websites technical and legal information , website navigation and security details
+                It has a website navigation to the setting page
+                The website logo, copyright notices could be added -->
+            <footer class="mdl-mini-footer">
+                <div class="mdl-mini-footer__left-section">
+                    <div class="mdl-logo">Surveying App</div>
+                    <ul class="mdl-mini-footer__link-list">
+                        <li><a href="settings.html">Settings</a></li>
+                        <li><a href="About.html">About</a></li>
+
+                    </ul>
+                </div>
+            </footer>
+        </div>
+
+        <!--   JavaScript files:   -->
+        <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+        <script src="js/shared.js"></script>
+		<script src="js/utility.js"></script>
+        <script src="js/mainPage.js"></script>
+    </body>
+</html>

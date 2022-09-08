@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Fencing</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+        <link rel="stylesheet" href="css/regionApp.css" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <link rel="shortcut icon" sizes="196x196" href="images/icon.png" />
+        <link rel="apple-touch-icon-precomposed" href="images/icon.png" />
+        <!-- Part added by Manuja-->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css" rel="stylesheet" />
+<style>
+	body { margin: 0; padding: 0; }
+	#map { position: absolute; top: 0px; bottom: 0; height: 100%; }
+</style>
+<!-- End of part added by Manuja-->
+    </head>
+    
+    <body>
+       <!-- Part added by Manuja-->
+         <!--
+              Can give the display style per your liking just left it as block for easy readability
+          -->
+       <style type="text/css">
+        #info {
+        display: block; 
+        position: relative;
+        margin: 0px auto;
+        width: 50%;
+        padding: 10px;
+        border: none;
+        border-radius: 3px;
+        font-size: 12px;
+        text-align: center;
+        color: #222;
+        background: #fff;
+        }
+         </style>
+         <!-- End of part added by Manuja-->
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+          <header class="mdl-layout__header">
+            <button onclick="location.href = 'index.html';" class="mdl-layout-icon mdl-button mdl-js-button mdl-button--icon"> 
+              <i class="material-icons">arrow_back</i>
+            </button>
+            <div class="mdl-layout__header-row">
+              <span class="mdl-layout-title" id="headerBarTitle">Record Region</span>
+            </div>
+          </header>
+          <main class="mdl-layout__content">
+              <!--   Main page content here:   -->  
+               <!-- Part added by me (Manuja Kirinde)-->
+            <div id="map"></div>
+            <pre id="info"></pre>
+            <!-- End of part added by Manuja-->
+
+          </main>    
+          <div id="toast" class="mdl-js-snackbar mdl-snackbar">
+            <div class="mdl-snackbar__text"></div>
+            <button class="mdl-snackbar__action" type="button"></button>
+          </div>
+        </div>
+
+        <!--   JavaScript files:   -->
+        <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+		<script src="js/shared.js"></script>
+        <script src="js/utility.js"></script>
+        <script src="js/recordRegionPage.js"></script>
+    </body>
+</html>

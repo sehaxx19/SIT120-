@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Fencing</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+        <link rel="stylesheet" href="css/regionApp.css" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <link rel="shortcut icon" sizes="196x196" href="images/icon.png" />
+        <link rel="apple-touch-icon-precomposed" href="images/icon.png" />
+        <!-- Part added by Manuja-->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+        <script src="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js"></script>
+        <link href="https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.css" rel="stylesheet" />
+        <script type="text/javascript" src="https://geographiclib.sourceforge.io/scripts/geographiclib.min.js" > </script>
+        <style>
+        body { margin: 0; padding: 0; }
+        #map { position: absolute; top: 0px; bottom: 0; height: 100%; }
+        </style>
+        <!-- End of part added by Manuja-->
+    </head>
+    
+    <body>
+        
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="mdl-layout__header">
+                <button onclick="location.href = 'index.html';" class="mdl-layout-icon mdl-button mdl-js-button mdl-button--icon"> 
+                    <i class="material-icons">arrow_back</i>
+                </button>
+                <div class="mdl-layout__header-row">
+                    <span class="mdl-layout-title" id="headerBarTitle">Record Region</span>
+                </div>
+            </header>
+            <main class="mdl-layout__content">
+                <!--   Main page content here:   -->  
+                <!-- Part added by me (Manuja Kirinde)-->
+                <div id="map"></div>
+                <pre id="info"></pre>
+                <pre id="coordinates" class = "coordinates"></pre>
+                <div id ="distance" class="distance-container"></div>
+                
+                
+                <!-- Add Region Button -->
+                
+                <div id="buttonGrid1" class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
+                        <!-- Adding current location -->
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="add" onclick="addCurrentLocation()">
+                            Add Current Location</button>
+                    </div>
+                    <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
+                        <!-- Adding corner -->
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="addcorner" onclick="addCorner()" >
+                            Add Corner</button>
+                    </div>
+                    <!-- Hidding the Add Corner button -->
+                    <script>
+                        var addCornerRef = document.getElementById('addcorner');
+
+                        // Disable the 'Add Corner' button so that it can't be clicked on
+                        addCornerRef.disabled = true;
+                    </script>
+                    
+                    <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
+                        <!-- Save Region Button -->
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="save" onclick="saveRegion()">
+                            Save Region</button>
+                    </div>
+                    <!-- Hidding the Save Region button -->
+                    <script>
+                        var saveRegionRef = document.getElementById('save');
+
+                        // Disable the 'Save Region' button so that it can't be clicked on
+                        saveRegionRef.disabled = true;
+                    </script>
+                        
+                    <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
+                        <!--Reset Region Button-->
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="reset" onclick="resetRegion()">
+                            Reset Region</button>
+                    </div>
+                    <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
+                    </div>
+                    <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">
+                        <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" id="settingsButton" onclick="goToSettingsPage()"  >
+                            <span class="material-icons">settings</span>              
+                        </button>
+                        <div class="mdl-tooltip" data-mdl-for="settingsButton">Go to settings page</div>
+                    </div>
+                </div>
+
+                <!-- End of part added by Manuja--><!-- Sithum edited-->
+            </main> 
+            
+            <div id="toast" class="mdl-js-snackbar mdl-snackbar">
+                <div class="mdl-snackbar__text"></div>
+                <button class="mdl-snackbar__action" type="button"></button>
+            </div>
+        </div>
+        <!-- Define dialog box -->
+        <dialog class="mdl-dialog">
+            <!-- Title on dialog box -->
+            <h6 class="mdl-dialog__title" id="dialogTitle">ALERT!</h6>
+            <div class="mdl-dialog__content">
+                <!-- Score in dialog box -->
+                <p>
+                    <b>Please Note:</b> Save Region button is  disabled until 3 corners are selected
+                </p>
+            </div>
+            <div class="mdl-dialog__actions">
+                <button type="button" class="mdl-button close">Close</button>
+            </div>
+        </dialog>
+
+        <!--   JavaScript files:   -->
+        <script defer src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+		<script src="js/shared.js"></script>
+        <script src="js/utility.js"></script>
+        <script src="js/recordRegionPage.js"></script>
+        <script src="https://npmcdn.com/@turf/turf@5.1.6/turf.min.js"></script>
+    </body>
+</html>
