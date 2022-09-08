@@ -1,0 +1,48 @@
+
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<title>Slots</title>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<div class="center">
+    <navigation-link url="/profile">
+        Your University Profile.
+    </navigation-link>
+    <a
+      v-bind:href="url"
+      class="nav-link"
+    >
+      <slot></slot>
+    </a>
+    <td>
+        <navigation-link url="/profile">
+            <!-- Use a component to add an icon -->
+            <font-awesome-icon name="user"></font-awesome-icon>
+            Login to the account.
+        </navigation-link>
+    </td>
+    
+    <button type="submit">
+        <slot>Login</slot>
+    </button>
+    <submit-button></submit-button>
+    <style>
+        body 
+        {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(176, 138, 82);
+            height: 100vh;
+            overflow: hidden;
+     
+        }
+        .center
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+             
+</div>
+    

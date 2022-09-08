@@ -1,0 +1,23 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+
+<title>Component</title>
+</head>
+<body>
+<div id="app"> <my-title></my-title>
+</div>
+
+<script>
+Vue.component('my-title', {
+template:'<h2>Week 7 Practical Task 1!</h2>'
+})
+let app= new Vue({
+el:"#app",
+
+}) 
+</script>
+</body> 
+</html>

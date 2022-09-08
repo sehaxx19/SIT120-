@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> 
+
+<title>Computed properties</title>
+</head> <body>
+<div id="app">
+<p>{{ msg }}</p>
+<button v-on:click="reverseMsg">Reverse Msg</button>
+</div>
+
+<script> 
+var app =
+new Vue({
+el: '#app', data: {
+msg: 'Week 7 Task 3!' },
+  methods: {
+reverseMsg: function () {
+this.msg = this.msg.split('').reverse().join('')
+} }
+}) 
+</script> 
+</body> 
+</html>
